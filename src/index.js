@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Massage from './Massage';
+  import App from './App';
 
-let testText = 'This is my first string in react';
-let massageClass = 'Massage';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Massage text = {testText} massage = {massageClass}/>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
