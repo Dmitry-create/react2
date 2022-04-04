@@ -15,7 +15,7 @@ console.log(props.chats);
             <List>
                 {props.chats.map(( value, index) => (
                 <ListItem key = {index}>
-                    <Button variant="contained" color="primary">
+                    <Button variant="contained"  disableElevation color="primary">
   chat№ {index}
 </Button>
                 
