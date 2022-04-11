@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {useParams} from "react-router-dom";
 import MessageList from'../Components/MessageList';
-import {AUTHOR} from'../Constants/constants';
 import ChatList from'../Components/ChatList';
 import '../App.css';
 
@@ -9,15 +8,15 @@ const initialChats = {
     id1:{
         name:'Chat 1',
         message:[
-        {author:'Alex', message:'lol'},
-        {author:'Dmitry', message:'hi'}
-       ] 
+            {author:'Alex', message:'lol'},
+            {author:'Dmitry', message:'hi'}
+        ] 
     },
     id2:{
         name:'Chat 2',
         message:[
-        { author:'Igor', message:'WTF'},
-        { author:'Jhon', message:'Welcome!'}
+            { author:'Igor', message:'WTF'},
+            { author:'Jhon', message:'Welcome!'}
         ]
     }
 }
