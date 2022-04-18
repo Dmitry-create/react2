@@ -1,13 +1,13 @@
 
 const initialState = {
     check: false,
-    note: 'вы включили checkbox'
+    name: ' '
 };
 
 const profileReducer = (state = initialState, action) =>{
     switch (action.type) {
-        case "CHANGE_CHECKBOX":
-            return {...state, check: !state.check
+        case "CHANGE_NAME":
+            return {...state, name: action.payload
         }
     default: return state
     }

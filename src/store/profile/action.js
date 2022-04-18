@@ -1,4 +1,6 @@
+export const CHANGE_NAME = "CHANGE_NAME";
 
-export const checkedAction ={
-    type: "CHANGE_CHECKBOX"
-}
+export const changeName = (newName) => ({
+    type: CHANGE_NAME,
+    payload: newName
+})

@@ -1,21 +1,24 @@
-import  {checkedAction} from "../store/profile/action";
+import  {changeName} from "../store/profile/action";
 import { useSelector,useDispatch } from "react-redux";
-import { useCallback, useState } from "react";
+import { useState } from "react";
+//import {getNameProfile} from "../store/profile/selectors"
 
 function Profile() {
+    const[value, setValue] = useState('');
     const dispatch = useDispatch();
-    const {check, note} = useSelector(state => state);
-    const setChecked = () => dispatch(checkedAction);
-   
-    console.log(check, note);
+    const name = useSelector((state)=>state.profile.name);
+    const setChecked = () => dispatch(changeName(value));
+    const setName = (e) => setValue(e.target.value)
 
     return <div>
-            <h1>Нажмите checkbox</h1>
+            <h1>Введите имя</h1>
             <input
-                type = "checkbox"
-                onClick={setChecked}
+                type = "text"
+                value ={value}
+                onChange={setName}
             />
-            <h1>{check? note : '' }</h1>
+            <button onClick = {setChecked}>Отправить</button>
+            <h1>Здравствуйте {name}</h1>
         </div>
 };
 

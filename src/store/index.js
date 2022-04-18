@@ -1,6 +1,16 @@
-import profileReducer from "./profile/reduser"
-import { createStore } from "redux"
+import profileReducer from "./profile/reducer"
+import messagesReducer from "./messages/reducer"
+import chatReducer from "./chats/reducer"
+import { createStore, combineReducers } from "redux"
 
-const store = createStore(profileReducer)
+const reducers = combineReducers({
+
+    profile:profileReducer,
+    messages: messagesReducer,
+    chats: chatReducer
+})
+
+
+const store = createStore(reducers)
 
 export default store
