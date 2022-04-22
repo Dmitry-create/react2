@@ -4,12 +4,11 @@ import List from '@material-ui/core/List';
 import {Link} from "react-router-dom";
 import Controlpanel from "./Controlpanel";
 import { useSelector} from 'react-redux';
-//import{getChatList} from '../store/chats/selectors'
 
 
 function ChatList () {
     const chat = useSelector(state=>state.chats.chatList);
-
+console.log(chat);
     if(chat.length<1) return null;
 
     return (

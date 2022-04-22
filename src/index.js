@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { createTheme, ThemeProvider} from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
-
+import CircularProgress from '@material-ui/core/CircularProgress'
+import {PersistGate} from 'redux-persist/integration/react';
+import  {persistor} from './store/index';
+import  store from './store/index';
+import { Provider } from 'react-redux';
 
 const theme = createTheme({
   palette: {
@@ -25,10 +27,14 @@ const theme = createTheme({
 
 
 ReactDOM.render(
-  <React.StrictMode>
-     <ThemeProvider theme={theme}>
-    <App />
-    </ThemeProvider>
+  <React.StrictMode >
+    <Provider store={store}>
+      <PersistGate loading = {<CircularProgress/>} persistor = {persistor}  >
+        <ThemeProvider theme={theme}>
+          <App/>
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

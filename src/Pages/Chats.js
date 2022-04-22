@@ -14,6 +14,7 @@ function Chats() {
     const creatChat = (e) =>setAddChatName(e.target.value); 
     const dispatch = useDispatch();
     const addChatList = () => {
+        console.log(addChatName);
         dispatch(addChat(addChatName))
         setAddChatName(' ')
     };
