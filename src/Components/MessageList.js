@@ -17,7 +17,7 @@ import AndroidIcon from '@material-ui/icons/Android';
 
 const MessageList = () => {
     const {chatId} = useParams();
-    const allmessages = useSelector(state=>state?.messages.messageList);
+    const allmessages = useSelector(state=>state.messages.messageList);
     console.log(allmessages);
     const messageList = allmessages[chatId]||[];
     
