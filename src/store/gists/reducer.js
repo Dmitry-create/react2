@@ -31,7 +31,6 @@ const gistsReducer = (state = initialState, action) =>{
                 loading:false
             };
         case GET_GISTS_FAILOAD:
-            console.log('ok')
             return{
                 ...state,
                 status:STATUSES.FAILOAD,
