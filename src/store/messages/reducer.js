@@ -2,8 +2,8 @@ import { ADD_MESSAGE } from "./action";
 
 const initialState = {
     messageList:{}
+    
 }
-
 
 const messagesReducer = (state = initialState, action) =>{
     switch (action.type) {
@@ -28,5 +28,4 @@ const messagesReducer = (state = initialState, action) =>{
             return state;
     }
 };
-
 export default messagesReducer
